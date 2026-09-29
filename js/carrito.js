@@ -1,6 +1,24 @@
-//Recuperar carrito desde localStorage
+//Recuperar carrito desde localStorage e implementar try/catch/fianlly
 
-const carrito = JSON.parse(localStorage.getItem("carrito")) ?? [];
+function obtenerCarritoDelStorage() {
+    try {
+        const carritoGuardado = localStorage.getItem("carrito");
+
+        return carritoGuardado
+            ? JSON.parse(carritoGuardado)
+            : [];
+
+    } catch (error) {
+        console.error("No se pudieron obtener los datos del carrito");
+
+        return [];
+
+    } finally {
+        console.log("Fin del bloque try-catch");
+    }
+}
+
+const carrito = obtenerCarritoDelStorage();
 
 //Calcular total del carrito
 
