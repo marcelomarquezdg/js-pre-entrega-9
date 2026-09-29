@@ -132,3 +132,17 @@ function imprimirGuitarrasEnHTML(lista) {
 // Mostrar guitarras disponibles al cargar la página
 
 imprimirGuitarrasEnHTML(guitarrasDisponibles);
+
+// Pop up en index con setimeout
+
+const popupPromocion = document.getElementById("popup-promocion");
+const btnCerrarPopup = document.getElementById("cerrar-popup");
+
+setTimeout(() => {
+    popupPromocion.style.display = "flex";
+}, 3000);
+
+btnCerrarPopup.addEventListener("click", () => {
+    popupPromocion.style.display = "none";
+});
+
